@@ -14,7 +14,7 @@ routes.get('/user', UserController.buscar);
 
 //Chat
 routes.post('/chat', ChatController.criar);
-routes.get('/chat', ChatController.buscar);
+routes.get('/chat', ChatController.listar);
 
 //Message
 routes.post('/message', MessageController.criar);

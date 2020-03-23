@@ -1,4 +1,5 @@
 const Chat = require('../models/Chat');
+const User = require('../models/User');
 
 module.exports = {
     async buscar(req, res) {
@@ -6,6 +7,13 @@ module.exports = {
 
         let chat = await Chat.findOne({ chat_Id });
 
+        return res.json(chat);
+    },
+
+    async listar(req, res) {
+        const { userOne } = req.query;
+
+        const chat = await Chat.find({ userOne });
         return res.json(chat);
     },
 
